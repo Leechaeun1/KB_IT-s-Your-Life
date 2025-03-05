@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>코드마을 입주 신청서</legend>
+        <table>
+          <tr>
+            <td><label for="username">이름</label></td>
+            <td><input id="username" type="text" name="username" /></td>
+          </tr>
+          <tr>
+            <td><label for="mail">이메일</label></td>
+            <td><input id="mail" type="text" name="mail" /></td>
+          </tr>
+
+          <tr>
+            <td><label for="password">비밀번호</label></td>
+            <td><input id="password" type="text" name="password" /></td>
+          </tr>
+          <tr>
+            <td><label for="password">비밀번호 확인</label></td>
+            <td><input id="password" type="text" name="password" /></td>
+          </tr>
+        </table>
+        <fieldset>
+          <legend>성별</legend>
+          <input type="radio" name="gender" id="man" value="m" />
+          <label for="man">남자</label>
+          <input type="radio" name="gender" id="woman" value="w" />
+          <label for="woman">여자</label>
+        </fieldset>
+        <fieldset>
+          <legend>사용 가능한 언어</legend>
+          <input type="checkbox" name="language" id="man" value="m" />
+          <label for="man">HTML</label>
+          <input type="radio" name="language" id="woman" value="w" />
+          <label for="woman">CSS</label>
+          <input type="checkbox" name="language" id="man" value="m" />
+          <label for="man">JavaScript</label>
+          <input type="checkbox" name="language" id="man" value="m" />
+          <label for="man">Python</label>
+        </fieldset>
+        프로필 사진 <input type="file" value="파일 선택" /><br />
+        <input type="button" value="확인" />
+        <input type="button" value="다시쓰기" />
+      </fieldset>
+    </form>
+  </body>
+</html>
