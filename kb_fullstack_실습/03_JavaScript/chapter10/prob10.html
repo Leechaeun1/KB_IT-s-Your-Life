@@ -8,5 +8,23 @@
   <body>
     <input type="date" id="expiryDate" />
     <p id="daysLeft"></p>
+    <script>
+      let p = document.getElementById('daysLeft');
+      let mangiIl = document.getElementById('expiryDate');
+
+      mangiIl.addEventListener('change', function () {
+        let today = new Date();
+        let someday = new Date(mangiIl.value);
+
+        let diffTime = someday.getTime() - today.getTime();
+        let diffDays = diffTime / (1000 * 60 * 60 * 24);
+
+        if (diffDays < 0) {
+          p.innerHTML = '만기일이 지났습니다.';
+        } else {
+          p.innerHTML = '만기일까지 ' + Math.floor(diffDays) + '일 남았습니다.';
+        }
+      });
+    </script>
   </body>
 </html>

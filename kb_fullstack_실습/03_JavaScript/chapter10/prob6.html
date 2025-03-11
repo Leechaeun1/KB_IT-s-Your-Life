@@ -8,5 +8,15 @@
   <body>
     <input type="number" id="krwInput" placeholder="원화 입력" />
     <p id="usdResult">달러(USD):</p>
+    <script>
+      let userInput = document.getElementById('krwInput');
+      let currentUsd = document.getElementById('usdResult');
+
+      userInput.addEventListener('input', function () {
+        let krw = parseFloat(userInput.value) || 0;
+        let usd = krw / 1300;
+        currentUsd.textContent = '달러(USD): ' + usd.toFixed(2);
+      });
+    </script>
   </body>
 </html>

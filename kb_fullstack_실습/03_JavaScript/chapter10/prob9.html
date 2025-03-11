@@ -8,5 +8,35 @@
   <body>
     <input type="number" id="investAmount" placeholder="투자 금액 입력" />
     <p id="riskMessage"></p>
+    <script>
+      let investAmount = document.getElementById('investAmount');
+      let p = document.getElementById('riskMessage');
+
+      investAmount.addEventListener('input', function () {
+        let userInvest = investAmount.value;
+        if (userInvest >= 10000000) {
+          p.innerHTML = '고위험 투자';
+        } else {
+          p.innerHTML = '저위험 투자';
+        }
+      });
+    </script>
   </body>
 </html>
+
+<!-- let investAmount = investAmountInput.value;에서 value를 아래에 넣어야 하는 이유는, 
+investAmountInput이 처음 선언될 때는 사용자가 입력한 값이 아직 반영되지 않았기 때문입니다.
+
+여기서 investAmountInput은 input 요소 자체를 가리키는 변수입니다. 
+즉, investAmountInput은 input 요소를 선택하는 것이며, 사용자가 입력을 했을 때 그 값은 input 요소의 value 속성에 저장됩니다.
+
+왜 value를 나중에 넣어야 할까요?
+초기값은 빈 문자열: 페이지가 처음 로드될 때 input 필드는 비어 있으므로 investAmountInput.value는 빈 문자열입니다. 
+이 값을 let investAmount = investAmountInput.value;에서 바로 가져오면 빈 문자열을 반환하게 됩니다.
+
+사용자가 입력하는 시점에 값을 가져와야 정확한 값이 나옵니다. 
+즉, input 필드의 값이 바뀌었을 때 그 값을 읽어오려면, input 이벤트가 발생한 후에 value를 읽어야 정확한 값이 반영됩니다.
+
+정리
+investAmountInput.value를 이벤트 리스너 안에서 사용하는 이유는 사용자가 값을 입력한 후에 그 값을 정확히 가져오기 위해서입니다. value를 초기 선언 시 넣으면 그때는 입력값이 없거나 초기 상태이므로 의미가 없게 됩니다.
+이렇게 하면 사용자가 입력할 때마다 자동으로 값이 반영되고, 그에 맞춰 조건을 확인할 수 있습니다. -->
