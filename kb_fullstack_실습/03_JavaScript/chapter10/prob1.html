@@ -1,39 +1,22 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script>
-
-    </script>
-  </head>
-  <body>
-    <button id="checkBalanceBtn">잔액 조회</button>
-    <p id="balanceDisplay">잔액: 원</p>
-  </body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>실시간 계좌 잔액 조회</title>
-    <script>
-      document
-        .getElementById('checkBalanceBtn')
-        .addEventListener('click', function () {
-          let balance =
-            Math.floor(Math.random() * (1000000 - 100000 + 1)) + 100000;
-          let formattedBalance = balance.toLocaleString('ko-KR');
-          document.getElementById('balanceDisplay').textContent =
-            '잔액: ' + formattedBalance + ' 원';
-        });
-    </script>
   </head>
   <body>
     <button id="checkBalanceBtn">잔액 조회</button>
     <p id="balanceDisplay">잔액: ? 원</p>
+    <script>
+      document
+        .getElementById('checkBalanceBtn')
+        .addEventListener('click', function () {
+          let a = Math.floor(Math.random() * (1000000 - 100000 + 1)) + 100000;
+
+          document.getElementById('balanceDisplay').textContent =
+            '잔액: ' + a.toLocaleString() + ' 원';
+        });
+    </script>
   </body>
 </html>

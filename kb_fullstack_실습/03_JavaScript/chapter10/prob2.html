@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>잔액 이체</title>
   </head>
   <body>
     <form id="transferForm">
@@ -12,5 +12,38 @@
     </form>
     <p id="resultMessage"></p>
     <p id="remainingBalance">남은 잔액: 100,000원</p>
+
+    <script>
+      document
+        .getElementById('transferForm')
+        .addEventListener('submit', function (event) {
+          event.preventDefault(); // 폼이 새로고침되는 것을 방지
+
+          let minusMoney = parseInt(document.getElementById('amount').value);
+          let balanceElement = document.getElementById('remainingBalance');
+          let resultMessageElement = document.getElementById('resultMessage');
+
+          let nowBalance = parseInt(
+            balanceElement.textContent.replace(/[^0-9]/g, '')
+          );
+
+          if (isNaN(minusMoney) || minusMoney <= 0) {
+            resultMessageElement.textContent = '유효한 금액을 입력하세요.';
+            return;
+          }
+
+          if (minusMoney > nowBalance) {
+            resultMessageElement.textContent = '잔액이 부족합니다.';
+            return;
+          }
+
+          nowBalance -= minusMoney;
+
+          balanceElement.textContent =
+            '남은 잔액: ' + nowBalance.toLocaleString() + '원';
+          resultMessageElement.textContent =
+            minusMoney.toLocaleString() + '원 이체 완료';
+        });
+    </script>
   </body>
 </html>

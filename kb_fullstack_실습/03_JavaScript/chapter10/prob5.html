@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="transactionHistory"></ul>
+
+    <button onclick="addTransaction(100000)">100,000원 이체</button>
+    <button onclick="addTransaction(50000)">50,000원 이체</button>
+    <script>
+      function addTransaction(money) {
+        let newLi = document.createElement('li');
+        let today = new Date();
+        newLi.textContent = money + '원 이체 완료 - ' + today;
+        document.getElementById('transactionHistory').appendChild(newLi);
+      }
+    </script>
+  </body>
+</html>
+
+<!-- const now = new Date();
+const formatter = new Intl.DateTimeFormat('ko-KR', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+  hour12: true,
+});
+
+const formattedDate = formatter.format(now);
+console.log(formattedDate); // 결과: 2025. 3. 11. 오전 8:44:55 -->

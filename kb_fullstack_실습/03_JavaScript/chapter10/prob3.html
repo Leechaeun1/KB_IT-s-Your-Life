@@ -9,5 +9,22 @@
     <input type="text" id="newsInput" placeholder="금융 뉴스 입력" />
     <button id="addNewsBtn">뉴스 추가</button>
     <ul id="newsList"></ul>
+    <script>
+      document
+        .getElementById('addNewsBtn')
+        .addEventListener('click', function () {
+          let newUl = document.getElementById('newsList');
+          let newNews = document.getElementById('newsInput');
+
+          if (newsInput.value.trim()) {
+            let newLi = document.createElement('li');
+            newLi.textContent = newsInput.value;
+            newsList.appendChild(newLi);
+            newsInput.value = ''; // 입력창 초기화
+          } else {
+            alert('뉴스 내용을 입력하세요.');
+          }
+        });
+    </script>
   </body>
 </html>

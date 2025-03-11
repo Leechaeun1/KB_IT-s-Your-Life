@@ -16,5 +16,43 @@
         <th>주가</th>
       </tr>
     </table>
+    <script>
+      document
+        .getElementById('addStockBtn')
+        .addEventListener('click', function () {
+          let nameName = document.getElementById('stockName');
+          let numberNumber = document.getElementById('stockPrice');
+          let addTable = document.getElementById('stockTable');
+
+          if (nameName.value.trim() && numberNumber.value.trim()) {
+            let newRow = addTable.insertRow();
+            let newCell1 = newRow.insertCell(0);
+            let newCell2 = newRow.insertCell(1);
+
+            newCell1.textContent = nameName.value;
+            newCell2.textContent = numberNumber.value.toLocaleString();
+
+            nameName.value = '';
+            numberNumber.value = '';
+          } else {
+            alert('값을 모두 입력하세요.');
+          }
+        });
+    </script>
   </body>
 </html>
+
+<!-- document.getElementById('addNewsBtn')
+.addEventListener('click', function () {
+  let newUl = document.getElementById('newsList');
+  let newNews = document.getElementById('newsInput');
+
+  if (newsInput.value.trim()) {
+    let newLi = document.createElement('li');
+    newLi.textContent = newsInput.value;
+    newsList.appendChild(newLi);
+    newsInput.value = ''; // 입력창 초기화
+  } else {
+    alert('뉴스 내용을 입력하세요.');
+  }
+}); -->
