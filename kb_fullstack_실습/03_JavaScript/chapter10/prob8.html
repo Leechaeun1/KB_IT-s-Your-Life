@@ -14,4 +14,25 @@
       <li>LG화학</li>
     </ul>
   </body>
+  <script>
+    let searchInput = document.getElementById('searchInput');
+    let stockList = document.getElementById('stockList');
+    let stockItems = stockList.getElementsByTagName('li');
+
+    searchInput.addEventListener('input', function () {
+      let filter = searchInput.value.toLowerCase();
+      // 소문자 변환하여 대소문자 구분 없이 비교
+
+      for (let i = 0; i < stockItems.length; i++) {
+        let item = stockItems[i];
+        let itemName = item.textContent;
+
+        if (itemName.toLowerCase().includes(filter)) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      }
+    });
+  </script>
 </html>
