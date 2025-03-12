@@ -12,11 +12,3 @@ if (porkBellyQuantity !== null) {
 } else {
   console.log('❌ 삼겹살 주문 내역이 없습니다.');
 }
-
-// import orderList from './order';
-
-// if (orderList) {
-//   console.log('✅ 삼겹살 주문 수량: 3인분');
-// } else {
-//   console.log('❌ 삼겹살 주문 내역이 없습니다.');
-// }
