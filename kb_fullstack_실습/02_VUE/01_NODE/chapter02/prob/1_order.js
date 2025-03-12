@@ -1,7 +1,8 @@
-const orderList = [
-  { menu: '삼겹살', num: '3인분' },
-  { menu: '갈비', num: '2인분' },
-  { menu: '목살', num: '4인분' },
+// 1_order.mjs
+const orders = [
+  { name: '삼겹살', quantity: 3 },
+  { name: '갈비', quantity: 2 },
+  { name: '목살', quantity: 4 },
 ];
 
-orderList.exports = { orderList };
+export { orders };

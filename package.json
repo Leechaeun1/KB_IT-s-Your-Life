@@ -1,0 +1,19 @@
+{
+  "name": "kb_it-s-your-life",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leechaeun1/KB_IT-s-Your-Life.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leechaeun1/KB_IT-s-Your-Life/issues"
+  },
+  "homepage": "https://github.com/Leechaeun1/KB_IT-s-Your-Life#readme"
+}
