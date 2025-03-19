@@ -1,0 +1,24 @@
+<div id="app">
+  <input
+    type="text"
+    :value="name"
+    @input="changeName"
+    placeholder="이름을 입력하세요"
+  />
+  <br />
+  <span><b>{{name}}</b></span> <b>님에게 보내는 편지</b>
+</div>
+<script src="https://unpkg.com/vue"></script>
+<script>
+  let vm = Vue.createApp({
+    name: 'App',
+    data() {
+      return { name: '' };
+    },
+    methods: {
+      changeName(e) {
+        this.name = e.target.value;
+      },
+    },
+  }).mount('#app');
+</script>
