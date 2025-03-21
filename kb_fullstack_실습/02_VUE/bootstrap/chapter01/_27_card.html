@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Card에서 구조 나누기 - header, body, footer -->
+    <div class="card">
+      <div class="card-header">Header</div>
+      <div class="card-body">Content</div>
+      <div class="card-footer">Footer</div>
+      </div>
+
+    <div class="card">
+      <div class="card-body">
+      <!-- card-title : card의 제목 표시 -->
+      <h4 class="card-title">Card title</h4>
+      <!-- card-text : card의 설명 표시 -->
+      <p class="card-text">Some example text. Some example text.</p>
+      <!-- card-link : card관련 링크 표시 -->
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+      </div>
+      </div>
+      <!-- card-img-overlay : 이미지 글자 겹쳐서 표시 -->
+      <div class="card-img-overlay" style="width : 400px">
+        <!-- card-img-top : 카드의 맨 위에 들어가는 이미지 -->
+        <img src="data:image/jpeg;base64,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" alt="card image" class="card-img-top">
+        <div class="card-body">
+          <h4 class="card-title">챈챈</h4>
+<p class="card-text">Lorem ipsum dolor sit amet.</p>
+        </div>
+      </div>
+      </html>
