@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+        <input type="text" v-model="textName" placeholder="이름 입력" ><br>
+      <textarea
+        type="text"
+        placeholder="편지 내용"
+        v-model="text"
+      ></textarea>
+      <br>
+      <h2><b>마음 속 이유(2개 이상 선택하세요):</b></h2>
+      <div v-for="(app, index) in apps" :key="index">
+        <input type="checkbox" :value="app" v-model="selected" />{{app}}
+      </div><br>
+      시간 : <input type="number" v-model="clockNum" /><br /><br />
+
+      <div v-if="textName.trim()===''" style="color: rgb(255, 155, 227);">♥ 이름을 입력해주세요</div><br>
+      <div v-if="text.length < 200" style="color: rgb(255, 155, 227);">♥ 편지 내용을 200자 이상 작성해주세요. (현재 {{text.length}}자)</div><br>
+      <div v-if="selected.length < 2" style="color: rgb(255, 155, 227);">♥ '신뢰', '배려', '따뜻함' 중 최소 2개를 선택해주세요.</div><br>
+      <div v-if="clockNum >= 18" style="color: rgb(255, 155, 227);">♥ 현재 시간이 너무 늦었어요! (마감 : 18시)</div><br>
+
+      <button v-if="textName.length>0 && text.length >= 200 && selected.length>=2 && clockNum < 18">마지막 고백 결심하기</button>
+    </div></div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      let vm = Vue.createApp({
+        name: 'App',
+        data() {
+          return { 
+            textName: '',
+            text: '',
+            clockNum: 0,
+            selected: [],
+            apps: [
+              '유머 감각',
+              '신뢰',
+              '배려',
+              '따뜻함',
+              '같이 있으면 편안함',
+            ],
+           };
+        },
+      }).mount('#app');
+    </script>
+  </body>
+</html>
