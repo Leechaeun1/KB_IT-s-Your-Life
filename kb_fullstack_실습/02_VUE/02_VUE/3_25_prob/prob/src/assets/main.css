@@ -11,6 +11,17 @@ body {
   margin: 10px;
 }
 .drinks {
-  background-color: #cfcccc;
+  background-color: #312f2f;
+  color: pink;
+  padding: 10px;
+}
+
+.choiceOption {
+  background-color: #ffd1d1;
+  padding: 10px;
+}
+
+.currentChoiced {
+  background-color: #ffd1d1;
   padding: 10px;
 }
