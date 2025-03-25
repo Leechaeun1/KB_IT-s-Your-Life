@@ -75,11 +75,12 @@ export default {
     <br />
     <DrinkOptions
       :selectDrink="drinksName"
+      v-if="drinksName"
       :sizeList="sizeList"
       @selectOption="selectOptionHandler"
     ></DrinkOptions>
     <br />
-    <div class="currentChoiced">
+    <div class="currentChoiced" v-if="drinksName">
       <h5>현재 선택 옵션:</h5>
       <div>사이즈: {{ selectSize }}</div>
       <div>추가샷: {{ extraShot ? '추가' : '없음' }}</div>
