@@ -23,6 +23,7 @@ export default {
   data() {
     return { todo: '' };
   },
+  // emit 사용은 함수 내에서도 가능
   emits: ['add-todo'],
   methods: {
     addTodoHandler() {
