@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col">
       <ul class="list-group">
+        <!-- $event : 자식 컴포넌트에서 발생한 이벤트의 인자 -->
         <TodoListItem
           v-for="todoItem in todoList"
           :key="todoItem.id"
@@ -22,6 +23,7 @@ export default {
   props: {
     todoList: { type: Array, required: true },
   },
+  // 자식에게 받아온 이벤트 부모에게 그대로 전달
   emits: ['delete-todo', 'toggle-completed'],
 };
 </script>
