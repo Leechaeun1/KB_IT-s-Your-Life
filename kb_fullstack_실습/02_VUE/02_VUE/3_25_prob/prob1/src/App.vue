@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <h2>카페 주문 앱</h2>
-
     <h3>메뉴 선택</h3>
     <MenuList
       v-for="app in menuList"
@@ -10,7 +9,7 @@
       :price="app.price"
       @selectDrink="selectDrinkHandler"
     ></MenuList>
-    <div class="col-sm-12">선택한 음료: {{ drinksName }}</div>
+    <div class="drinks">선택한 음료: {{ drinksName }}</div>
   </div>
 </template>
 <script>
