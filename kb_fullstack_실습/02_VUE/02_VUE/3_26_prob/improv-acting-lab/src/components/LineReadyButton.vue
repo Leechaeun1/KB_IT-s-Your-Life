@@ -1,6 +1,6 @@
 <template>
   <input
-    class="button"
+    class="readyButton"
     type="button"
     value="🤍 대사 준비 완료"
     @click="readyCountClick"
