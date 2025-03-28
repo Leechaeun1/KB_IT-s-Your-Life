@@ -43,10 +43,7 @@ const addTodo = (todo) => {
   }
 };
 
-const deleteTodo = (id) => {
-  let index = state.todoList.findIndex((item) => id === item.id);
-  state.todoList.splice(index, 1);
-};
+budgetList
 
 const toggleCompleted = (id) => {
   let index = state.todoList.findIndex((item) => id === item.id);
