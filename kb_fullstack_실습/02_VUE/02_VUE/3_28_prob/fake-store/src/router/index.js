@@ -1,38 +1,37 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '@/pages/Home.vue';
-import About from '@/pages/About.vue';
-import Members from '@/pages/Members.vue';
-import Videos from '@/pages/Videos.vue';
-import MemberInfo from '@/pages/MemberInfo.vue';
-import VideoPlayer from '@/pages/VideoPlayer.vue';
+import HomePage from '@/pages/HomePage.vue';
+import ElectronicsPage from '@/pages/ElectronicsPage.vue';
+import JeweleryPage from '@/pages/JeweleryPage.vue';
+import MensClothingPage from '@/pages/MensClothingPage.vue';
+import WomensClothingPage from '@/pages/WomensClothingPage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    // 해당 path로 접근 시 해당 컴포넌트 렌더링
     {
       path: '/',
       name: 'home',
-      component: Home,
+      component: HomePage,
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About,
+      path: '/',
+      name: 'electronics',
+      component: ElectronicsPage,
     },
     {
-      path: '/members',
-      name: 'members',
-      component: Members,
+      path: '/',
+      name: 'jewelery',
+      component: JeweleryPage,
     },
-    // 경로에 :이 붙으면 동적 파라미터 할당 가능
-    { path: '/members/:id', name: 'members.id', component: MemberInfo },
     {
-      path: '/songs',
-      name: 'videos',
-      component: Videos,
-      // 하나의 라우트 내에서 또다른 라우트를 띄우는 중첩 라우트 구조
-      children: [{ path: ':id', name: 'videos/id', component: VideoPlayer }],
+      path: '/',
+      name: 'mensclothing',
+      component: MensClothingPage,
+    },
+    {
+      path: '/',
+      name: 'womensclothing',
+      component: WomensClothingPage,
     },
   ],
 });
