@@ -17,18 +17,18 @@
   <div>완료된 할일 수 : {{ doneCount }}</div>
 </template>
 <script setup>
-import { useTodoListStore } from '@/stores/todoList.js';
+import{ useTodoListStore } from '@/stores/todoList.js'
 import { ref, computed } from 'vue';
 
 const todo = ref('');
 const todoListStore = useTodoListStore();
 // 필요한 값들만 객체 구조 분해로 스토어에서 꺼낸다
-const { todoList, addTodo, deleteTodo, toggleDone } = todoListStore;
+const {todoList, addTodo, deleteTodo, toggleDone}=todoListStore;
 // 기본 타입은 계산된 속성이라면 다시 computed로 작성해야 한다
-const doneCount = computed(() => todoListStore.doneCount);
+const doneCount = computed(()=> todoListStore.doneCount);
 
-const addTodoHandler = () => {
+const addTodoHandler = ()->{
   addTodo(todo.value);
-  todo.value = '';
-};
+  todo.value='';
+}
 </script>
